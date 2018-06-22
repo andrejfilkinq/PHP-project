@@ -41,7 +41,21 @@ class GoogleAuthController extends Controller
         $user = Socialite::driver($provider)->stateless()->user();
         $users = DB::table('users')->where('email', '=', $user->email)->get();
         if (isset($users[0])) {
-            
+//            Auth::login($user);
+//            Auth::loginUsingId(2);
+//            redirect('home');
+//            $users123 = DB::table('users')->where('email', '=', $user->email)->get();
+//            dd($users123->id);
+
+            $users123 = User::all()->where('email', $user->email);
+            $idEmail = 0;
+            foreach ($users123 as $value) {
+                $idEmail = $value->id;
+            }
+
+            Auth::loginUsingId($idEmail);
+            return redirect($this->redirectTo);
+            return $user->token;
         } else {
             $authUser = $this->FindOrCreateUser($user, $provider);
             Auth::login($authUser, true);

@@ -18,7 +18,7 @@ class VerifyEmailController extends Controller {
         Auth::login($user);
 
         return redirect('/home')->withMessage([
-                    'status' => 'Your email hes been confirmation(lol)'
+                    'status' => 'Your email hes been confirmation'
         ]);
     }
 

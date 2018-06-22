@@ -39,6 +39,9 @@
         <![endif]-->
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
+
+
+
         <div class="wrapper">
 
             <header class="main-header">
@@ -270,7 +273,7 @@
                                         <div class="pull-right">
                                             <a  href="{{ route('logout') }}" class="btn btn-default btn-flat"
                                                 onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                                    document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
                                             </a>
                                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -500,7 +503,6 @@
                         <td>3</td>
                         <td>4</td>
                     </tr>
-
                     @foreach($articles as $k => $article) 
                     <tr>
                         <td><a href="/editing/{{$article->id}}">{{$article->id}}</a></td>
@@ -1176,5 +1178,10 @@
                 <script src="{{ asset('diplom/dist/js/pages/dashboard.js')}}"></script>
                 <!-- AdminLTE for demo purposes -->
                 <script src="{{ asset('diplom/dist/js/demo.js')}}"></script>
+
+                <script type="text/javascript">
+                                                    alert({{ $sum }});
+                </script>
+
             </body>
         </html>

@@ -155,6 +155,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
@@ -203,5 +204,6 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
     ],
 ];
